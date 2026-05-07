@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { fetchWeather, fetchForecast } from "./weatherService";
 import { storage } from "./storage";
-
+import "../css/style.css";
 const WeatherContext = createContext();
 
 export const useWeather = () => useContext(WeatherContext);
@@ -10,12 +10,13 @@ export const WeatherProvider = ({ children }) => {
   const [city, setCity] = useState(storage.getCity());
   const [weather, setWeather] = useState(null);
   const [forecast, setForecast] = useState([]);
-if (!weather) return <h2 style={{color:"white"}}>Loading...</h2>;
+
   const loadData = async (cityName) => {
     try {
       const w = await fetchWeather(cityName);
       const f = await fetchForecast(cityName);
-
+    console.log(w.data);
+    console.log(f.data);
       setWeather(w.data);
       setForecast(f.data.list);
       setCity(cityName);
@@ -48,9 +49,9 @@ export const Dashboard = () => {
 
   return (
     <div className="container">
-      <h1>🌤️ WEATHER DASHBOARD</h1>
+      <h1>WEATHER DASHBOARD</h1>
 
-      <p>📍 {city}</p>
+      <p>{city}</p>
 
       <div className="weather-box">
         <p>🌡️ {weather.main.temp}°C</p>
@@ -70,7 +71,7 @@ export const Dashboard = () => {
           onChange={(e) => setInput(e.target.value)}
           placeholder="Search city..."
         />
-        <button>🔍</button>
+        <button>Search</button>
       </form>
 
       <div className="forecast">

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { WeatherProvider, Dashboard } from "./jsx/ui";
+import { WeatherProvider, Dashboard } from "./jsx/ui.jsx";
 
 function App() {
   return (
