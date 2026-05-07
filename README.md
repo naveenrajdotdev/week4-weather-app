@@ -4,11 +4,15 @@ A modern and responsive Weather Dashboard built using React.js, Axios, Context A
 
 ---
 
+# Live App
+
+[Weather Dashboard App](https://week4-weather-app.vercel.app/)
+
+---
+
 ## Screenshots
 
 ![Weather App](./src/assets/screenshot1.png)
-
-![Weather App](./src/assets/screenshot2.png)
 
 ---
 
