@@ -74,11 +74,12 @@ export const Dashboard = () => {
         <button>Search</button>
       </form>
 
+      <h3>5-Day Forecast:</h3>
+      <h3>&nbsp;</h3>
       <div className="forecast">
-        <h3>5-Day Forecast</h3>
         {days.map((day, i) => (
           <div key={i} className="forecast-item">
-            <p>{new Date(day.dt_txt).toDateString()}</p>
+            <p><strong>{new Date(day.dt_txt).toDateString()}</strong></p>
             <p>{day.main.temp}°C</p>
             <p>{day.weather[0].main}</p>
           </div>
